@@ -2,10 +2,10 @@ import { Zap, Shield, Code, BarChart3, Users, Clock } from 'lucide-react'
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="features" className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-gray-900 tracking-[-0.02em] mb-4">
             주요 기능
           </h2>
           <p className="text-xl text-gray-600">
