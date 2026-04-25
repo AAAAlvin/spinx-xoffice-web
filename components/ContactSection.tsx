@@ -1,24 +1,25 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { Mail, Send } from 'lucide-react'
+import { AlertCircle, CheckCircle2, Mail, Send } from 'lucide-react'
+
+type Feedback = { kind: 'success' } | { kind: 'error'; message: string }
 
 export default function ContactSection() {
   const [sending, setSending] = useState(false)
-  const [ok, setOk] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [feedback, setFeedback] = useState<Feedback | null>(null)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setError(null)
+    const form = e.currentTarget
+    setFeedback(null)
     if (sending) return
-    const fd = new FormData(e.currentTarget)
+    const fd = new FormData(form)
     const _honey = String(fd.get('_honey') || '')
     if (_honey) {
-      setOk(true)
+      setFeedback({ kind: 'success' })
       return
     }
-    setOk(false)
     const name = String(fd.get('name') || '').trim()
     const email = String(fd.get('email') || '').trim()
     const company = String(fd.get('company') || '').trim()
@@ -32,15 +33,38 @@ export default function ContactSection() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, company, message }),
       })
-      const data = (await res.json().catch(() => ({}))) as { error?: string }
+      const raw = await res.text()
+      let data: { ok?: boolean; error?: string } = {}
+      if (raw) {
+        try {
+          data = JSON.parse(raw) as { ok?: boolean; error?: string }
+        } catch {
+          data = {}
+        }
+      }
+
       if (!res.ok) {
-        setError(data.error || '전송에 실패했습니다.')
+        setFeedback({
+          kind: 'error',
+          message: data.error || '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
+        })
         return
       }
-      setOk(true)
-      e.currentTarget.reset()
+      if (data.ok === false) {
+        setFeedback({
+          kind: 'error',
+          message: data.error || '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
+        })
+        return
+      }
+
+      setFeedback({ kind: 'success' })
+      form.reset()
     } catch {
-      setError('전송에 실패했습니다. 잠시 후 다시 시도해 주세요.')
+      setFeedback({
+        kind: 'error',
+        message: '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
+      })
     } finally {
       setSending(false)
     }
@@ -62,16 +86,50 @@ export default function ContactSection() {
           </p>
         </div>
 
-        {ok && (
-          <p className="text-center text-primary font-medium mb-6" role="status">
-            문의가 접수되었습니다. 감사합니다.
-          </p>
+        {feedback?.kind === 'success' && (
+          <div
+            className="mb-8 overflow-hidden rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/95 to-white shadow-[0_8px_30px_rgba(16,185,129,0.12)]"
+            role="status"
+            aria-live="polite"
+          >
+            <div className="flex items-start gap-4 p-5 sm:p-6">
+              <div
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600"
+                aria-hidden
+              >
+                <CheckCircle2 className="h-6 w-6" strokeWidth={2} />
+              </div>
+              <div className="min-w-0 space-y-1 pt-0.5">
+                <p className="text-base font-bold text-gray-900 sm:text-lg">접수되었어요</p>
+                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+                  빠른 시일 안에 남겨주신 주소로 답변 드릴게요. 스팸 메일함도 한 번
+                  봐주시면 좋아요.
+                </p>
+              </div>
+            </div>
+          </div>
         )}
 
-        {error && (
-          <p className="text-center text-red-600 mb-6" role="alert">
-            {error}
-          </p>
+        {feedback?.kind === 'error' && (
+          <div
+            className="mb-8 overflow-hidden rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/95 to-white shadow-[0_8px_30px_rgba(245,158,11,0.1)]"
+            role="alert"
+            aria-live="assertive"
+          >
+            <div className="flex items-start gap-4 p-5 sm:p-6">
+              <div
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-700"
+                aria-hidden
+              >
+                <AlertCircle className="h-6 w-6" strokeWidth={2} />
+              </div>
+              <div className="min-w-0 space-y-2 pt-0.5">
+                <p className="text-base font-bold text-gray-900 sm:text-lg">잠시 문제가 있었어요</p>
+                <p className="text-sm leading-relaxed text-gray-700">{feedback.message}</p>
+                <p className="text-xs text-gray-500">입력 내용은 그대로 있으니, 잠시 후 다시 눌러 주세요.</p>
+              </div>
+            </div>
+          </div>
         )}
 
         <form
