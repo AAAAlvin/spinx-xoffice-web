@@ -107,6 +107,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="text-sm text-gray-600 space-y-2">
             <p className="font-semibold text-gray-900">㈜SPINX</p>
+            <p className="text-gray-700">xOffice · xConnector</p>
             <p>사업자 등록번호 : 000-0000-00000 | 대표 : 김혜주</p>
             <p>호스팅 서비스 : 주식회사 SPINX | 통신판매업 신고번호 : 2024-서울강남-03377</p>
             <p>경기도 성남시 분당구 판교역로240 A동 514호</p>

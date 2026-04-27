@@ -50,13 +50,6 @@ export default function ContactSection() {
         })
         return
       }
-      if (data.ok === false) {
-        setFeedback({
-          kind: 'error',
-          message: data.error || '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.',
-        })
-        return
-      }
 
       setFeedback({ kind: 'success' })
       form.reset()
@@ -82,7 +75,7 @@ export default function ContactSection() {
           </h2>
           <p className="text-sm font-medium tracking-wide text-primary uppercase">Contact us</p>
           <p className="text-lg text-gray-600 mt-4">
-            제품·도입·협력 관련 문의는 아래 양식으로 보내주세요. 담당자가 이메일로 답드립니다.
+            문의 접수 시 담당자가 연락드립니다.
           </p>
         </div>
 
@@ -206,14 +199,16 @@ export default function ContactSection() {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={sending}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-4 rounded-2xl hover:bg-blue-600 transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg disabled:opacity-60 disabled:pointer-events-none"
-          >
-            <Send size={20} />
-            {sending ? '보내는 중…' : '문의 보내기'}
-          </button>
+          <div className="flex justify-center pt-1">
+            <button
+              type="submit"
+              disabled={sending}
+              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-2xl bg-primary px-8 py-4 text-base font-bold text-white shadow-[0_8px_28px_rgba(49,130,246,0.35)] ring-2 ring-inset ring-white/20 transition hover:scale-[1.01] hover:bg-blue-600 active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
+            >
+              <Send size={20} />
+              {sending ? '보내는 중…' : '문의 보내기'}
+            </button>
+          </div>
         </form>
       </div>
     </section>

@@ -1,19 +1,22 @@
-import { FileSpreadsheet, Workflow, Repeat, Zap, Calendar, FileText } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar, FileSpreadsheet, FileText, Repeat, Workflow, Zap } from 'lucide-react'
 
 export default function XOfficeSection() {
   return (
     <section id="xoffice" className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-gray-900 tracking-[-0.02em] mb-4">
-            xoffice
-          </h2>
-          <p className="text-xl text-gray-600">
-            오피스 기반의 강력한 자동화 툴
-          </p>
-          <p className="text-lg text-gray-500 mt-2">
-            Excel, Word, PowerPoint를 활용한 반복 업무를 자동으로
-          </p>
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/xoffice-logo.png"
+              alt="xOffice"
+              width={200}
+              height={56}
+              className="h-12 w-auto object-contain sm:h-14"
+            />
+          </div>
+          <p className="text-xl text-gray-600">Native Excel 기반의 강력한 업무 플랫폼</p>
+          <p className="text-lg text-gray-500 mt-2">Excel을 활용한 손쉬운 데이터 분석과 활용</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -23,12 +26,10 @@ export default function XOfficeSection() {
                 <FileSpreadsheet className="text-green-600" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Excel 자동화
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Excel을 통합 업무 효율화</h3>
                 <p className="text-gray-600">
-                  데이터 수집, 정리, 분석, 리포트 생성까지 
-                  모든 Excel 작업을 자동으로 처리하세요.
+                  데이터 연동, 가공, 취합, 분석, 리포트 생성까지 모든 Excel 작업을 한 번에 처리하고
+                  효율적으로 마무리하세요.
                 </p>
               </div>
             </div>
@@ -38,12 +39,9 @@ export default function XOfficeSection() {
                 <FileText className="text-blue-600" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  문서 자동 생성
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">리포트 · 양식</h3>
                 <p className="text-gray-600">
-                  Word와 PowerPoint 문서를 템플릿 기반으로 
-                  자동 생성하고 배포할 수 있어요.
+                  Excel 템플릿 기반의 리포트, 양식을 손쉽게 생성하고 배포할 수 있어요.
                 </p>
               </div>
             </div>
@@ -53,12 +51,9 @@ export default function XOfficeSection() {
                 <Workflow className="text-purple-600" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  워크플로우 자동화
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">워크플로우 자동화</h3>
                 <p className="text-gray-600">
-                  복잡한 업무 프로세스를 시각적으로 설계하고 
-                  자동으로 실행되도록 설정하세요.
+                  복잡한 업무 프로세스를 시각적으로 설계하고 자동으로 실행되도록 설정하세요.
                 </p>
               </div>
             </div>
@@ -68,12 +63,9 @@ export default function XOfficeSection() {
                 <Calendar className="text-orange-600" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  스케줄 실행
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">스케줄 실행</h3>
                 <p className="text-gray-600">
-                  매일, 매주, 매월 원하는 시간에 
-                  자동으로 작업이 실행되도록 예약하세요.
+                  매일, 매주, 매월 원하는 시간에 자동으로 작업이 실행되도록 예약하세요.
                 </p>
               </div>
             </div>
@@ -83,20 +75,20 @@ export default function XOfficeSection() {
             <div className="space-y-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-lg font-semibold">자동화 작업 현황</span>
+                  <span className="text-lg font-semibold">작업 현황</span>
                   <Zap size={24} className="text-yellow-300" />
                 </div>
                 <div className="text-4xl font-bold mb-2">156개</div>
-                <div className="text-sm opacity-80">이번 달 실행된 작업</div>
+                <div className="text-sm opacity-80">이번 달 처리한 작업</div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-sm opacity-80 mb-1">Excel 자동화</div>
+                  <div className="text-sm opacity-80 mb-1">Excel 처리</div>
                   <div className="text-2xl font-semibold">87개</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-sm opacity-80 mb-1">문서 생성</div>
+                  <div className="text-sm opacity-80 mb-1">리포트 · 양식</div>
                   <div className="text-2xl font-semibold">42개</div>
                 </div>
               </div>
@@ -110,7 +102,7 @@ export default function XOfficeSection() {
                       <span>-85%</span>
                     </div>
                     <div className="bg-white/20 rounded-full h-2">
-                      <div className="bg-yellow-300 rounded-full h-2 w-10/12"></div>
+                      <div className="bg-yellow-300 rounded-full h-2 w-10/12" />
                     </div>
                   </div>
                   <div>
@@ -119,7 +111,7 @@ export default function XOfficeSection() {
                       <span>-92%</span>
                     </div>
                     <div className="bg-white/20 rounded-full h-2">
-                      <div className="bg-yellow-300 rounded-full h-2 w-11/12"></div>
+                      <div className="bg-yellow-300 rounded-full h-2 w-11/12" />
                     </div>
                   </div>
                   <div>
@@ -128,7 +120,7 @@ export default function XOfficeSection() {
                       <span>-78%</span>
                     </div>
                     <div className="bg-white/20 rounded-full h-2">
-                      <div className="bg-yellow-300 rounded-full h-2 w-9/12"></div>
+                      <div className="bg-yellow-300 rounded-full h-2 w-9/12" />
                     </div>
                   </div>
                 </div>
@@ -139,18 +131,16 @@ export default function XOfficeSection() {
 
         <div className="bg-gray-50 rounded-3xl p-8 text-center">
           <Repeat className="mx-auto mb-4 text-blue-500" size={48} />
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            반복 작업은 이제 그만!
-          </h3>
-          <p className="text-gray-600 mb-6">
-            xoffice가 당신의 시간을 되찾아 드립니다
-          </p>
-          <button className="bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
-            xoffice 시작하기
-          </button>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Excel 작업으로 인한 야근은 이제 그만!</h3>
+          <p className="text-gray-600 mb-6">xOffice가 당신의 시간을 되찾아 드립니다.</p>
+          <a
+            href="#contact"
+            className="inline-block bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-600 transition-colors"
+          >
+            xOffice 시작하기
+          </a>
         </div>
       </div>
     </section>
   )
 }
-

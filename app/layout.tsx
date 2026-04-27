@@ -10,8 +10,9 @@ const noto = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: 'SPINX - Office 자동화의 새로운 시작',
-  description: 'xoffice와 xconnector로 오피스 업무를 자동화하고 세상과 연결하세요',
+  title: 'xOffice & xConnector — Excel 업무 효율화와 AI 연결',
+  description:
+    'xOffice로 Excel 파일을 시스템에 연결하고, xConnector로 AI와 업무를 효율적으로 연결하세요.',
 }
 
 export default function RootLayout({

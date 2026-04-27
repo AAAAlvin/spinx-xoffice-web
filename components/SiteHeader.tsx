@@ -1,13 +1,12 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const nav = [
-  { href: '#xoffice', label: 'xoffice' },
-  { href: '#xconnector', label: 'xconnector' },
-  { href: '#features', label: '기능' },
-  { href: '#integration', label: '연동' },
-  { href: '#pricing', label: '가격' },
+  { href: '#xoffice', label: 'xOffice' },
+  { href: '#xconnector', label: 'xConnector' },
+  { href: '#usecases', label: '사용 사례' },
   { href: '#contact', label: '문의' },
 ] as const
 
@@ -38,9 +37,16 @@ export default function SiteHeader() {
       <div className="mx-auto flex h-14 w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="shrink-0 text-base font-bold tracking-tight text-gray-900 transition hover:text-primary sm:text-lg"
+          className="relative flex h-9 w-[7.5rem] shrink-0 items-center sm:h-10 sm:w-[8.5rem]"
         >
-          SPINX
+          <Image
+            src="/images/xoffice-logo.png"
+            alt="xOffice"
+            width={180}
+            height={48}
+            className="h-full w-full object-contain object-left"
+            priority
+          />
         </a>
 
         <a href="#contact" className={`${contactCtaClass} ml-auto md:hidden`}>
