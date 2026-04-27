@@ -34,10 +34,10 @@ export default function SiteHeader() {
           : 'border-b border-transparent bg-gradient-to-b from-white/90 to-white/0'
       }`}
     >
-      <div className="mx-auto flex h-14 w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 w-full max-w-7xl items-center gap-2 px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="relative flex h-9 w-[7.5rem] shrink-0 items-center sm:h-10 sm:w-[8.5rem]"
+          className="relative flex h-8 w-[6.5rem] shrink-0 items-center sm:h-9 sm:w-[7.5rem]"
         >
           <Image
             src="/images/xoffice-logo.png"
