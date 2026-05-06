@@ -1,12 +1,4 @@
 import Image from 'next/image'
-import {
-  Network,
-  Database,
-  MessageSquare,
-  Globe,
-  LayoutGrid,
-  Workflow,
-} from 'lucide-react'
 
 export default function XConnectorSection() {
   return (
@@ -29,28 +21,15 @@ export default function XConnectorSection() {
         </div>
 
         <div className="grid gap-8 mb-16">
-          <div className="bg-gradient-to-br from-slate-950 via-blue-700 to-violet-700 rounded-3xl p-8 text-center text-white shadow-2xl">
-            <Globe className="mb-6 mx-auto" size={48} />
-            <h3 className="text-3xl font-bold mb-4">xConnector의 네 가지 축</h3>
-            <div className="mx-auto mb-6 max-w-2xl space-y-3">
-              <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
-                <MessageSquare className="shrink-0" size={20} />
-                <span className="max-sm:text-center sm:text-left">xChat — 자연어 대화, 실시간 응답, 도구·xOffice 연계</span>
-              </div>
-              <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
-                <Database className="shrink-0" size={20} />
-                <span className="max-sm:text-center sm:text-left">xSchema — Excel 기반 설계, 검증, DDL, MySQL·뷰 관리</span>
-              </div>
-              <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
-                <LayoutGrid className="shrink-0" size={20} />
-                <span className="max-sm:text-center sm:text-left">xBoard — 표 데이터 작업과 AI 채팅을 한 화면에서</span>
-              </div>
-              <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
-                <Workflow className="shrink-0" size={20} />
-                <span className="max-sm:text-center sm:text-left">xFlow — 노드 기반 플로우와 주기 실행 자동화</span>
-              </div>
-            </div>
-            <p className="mx-auto max-w-2xl text-sm font-medium opacity-95">
+          <div className="bg-gradient-to-br from-slate-950 via-blue-900 to-teal-800 rounded-3xl px-6 py-10 text-center text-white shadow-2xl sm:px-10 sm:py-12">
+            <h3 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl">xConnector의 네 가지 축</h3>
+            <ul className="mx-auto mt-8 max-w-3xl list-none space-y-4 text-base leading-snug sm:text-lg">
+              <li className="text-balance">xChat — 자연어 대화, 실시간 응답, 도구·xOffice 연계</li>
+              <li className="text-balance">xSchema — Excel 기반 설계, 검증, DDL, MySQL·뷰 관리</li>
+              <li className="text-balance">xBoard — 표 데이터 작업과 AI 채팅을 한 화면에서</li>
+              <li className="text-balance">xFlow — 노드 기반 플로우와 주기 실행 자동화</li>
+            </ul>
+            <p className="mx-auto mt-8 max-w-3xl text-sm font-medium leading-relaxed text-balance opacity-95 sm:text-base">
               질문하고, 설계하고, 확인하고, 자동화하는 흐름을 하나의 업무 공간에서 이어갑니다.
             </p>
           </div>
@@ -58,9 +37,6 @@ export default function XConnectorSection() {
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-            <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-              <MessageSquare className="text-blue-500" size={32} />
-            </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-1">xChat</h3>
             <p className="text-sm font-semibold text-blue-700 mb-4">대화에서 바로 실행으로 이어지는 AI 업무 공간</p>
             <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
@@ -73,9 +49,6 @@ export default function XConnectorSection() {
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-            <div className="bg-purple-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-              <Database className="text-purple-500" size={32} />
-            </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-1">xSchema</h3>
             <p className="text-sm font-semibold text-purple-700 mb-4">Excel 데이터를 DB 설계로 바꾸는 캔버스</p>
             <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
@@ -83,54 +56,38 @@ export default function XConnectorSection() {
               MySQL 스키마 반영을 지원하며, 외부 MySQL 카탈로그와 연결해 물리 테이블과 논리 뷰(sql_view)를 함께 다룰 수
               있습니다.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-purple-600">
-              <Database size={20} />
-              <span className="font-semibold">설계·DDL·뷰</span>
-            </div>
+            <div className="text-center text-sm font-semibold text-purple-600">설계·DDL·뷰</div>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-            <div className="bg-amber-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-              <LayoutGrid className="text-amber-600" size={32} />
-            </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-1">xBoard</h3>
             <p className="text-sm font-semibold text-amber-800 mb-4">데이터 확인과 AI 대화를 한 화면에서</p>
             <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
               넓은 그리드에서 데이터를 조회하고 정리하면서, 같은 화면에서 AI에게 질문할 수 있습니다. 표 작업과 대화를 오가며
               필요한 분석을 빠르게 좁혀 갑니다.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-amber-800">
-              <LayoutGrid size={20} />
-              <span className="font-semibold">분할 화면</span>
-            </div>
+            <div className="text-center text-sm font-semibold text-amber-800">분할 화면</div>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-            <div className="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-              <Workflow className="text-green-600" size={32} />
-            </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-1">xFlow</h3>
             <p className="text-sm font-semibold text-green-800 mb-4">반복 업무를 설계하고 실행하는 자동화 엔진</p>
             <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
               트리거, 조건, HTTP, 코드, 지연 노드를 연결해 업무 흐름을 만듭니다. 서버 스케줄과 연동하면 정해진 주기에 맞춰
               자동으로 실행되는 업무 플로우를 구성할 수 있습니다.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-green-800">
-              <Workflow size={20} />
-              <span className="font-semibold">플로·스케줄</span>
-            </div>
+            <div className="text-center text-sm font-semibold text-green-800">플로·스케줄</div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-violet-700 rounded-3xl p-12 text-white text-center">
-          <Network className="mx-auto mb-6" size={48} />
+        <div className="bg-gradient-to-r from-slate-950 via-blue-900 to-cyan-800 rounded-3xl p-12 text-white text-center shadow-[0_24px_80px_-16px_rgba(15,23,42,0.45)]">
           <h3 className="text-3xl font-bold mb-4">Excel, AI, 자동화까지 하나의 흐름으로</h3>
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            xChat으로 묻고, xSchema로 구조를 분석하고, xboard로 컨텐츠를 구성하고, xFlow를 통해 이 모든것을 연결하세요.
+            xChat으로 묻고, xSchema로 구조를 분석하고, xBoard로 컨텐츠를 구성하고, xFlow를 통해 이 모든것을 연결하세요.
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-blue-500 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+            className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm hover:bg-cyan-50 transition-colors"
           >
             xConnector 시작하기
           </a>

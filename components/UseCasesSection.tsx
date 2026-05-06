@@ -155,14 +155,14 @@ export default function UseCasesSection() {
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-12 text-white text-center">
+        <div className="mt-16 bg-gradient-to-r from-slate-950 via-blue-900 to-cyan-800 rounded-3xl p-12 text-white text-center shadow-[0_24px_80px_-16px_rgba(15,23,42,0.45)]">
           <h3 className="text-3xl font-bold mb-4">당신의 업무에는 어떻게 활용하시겠어요?</h3>
           <p className="text-xl mb-8 opacity-90">
             문의 접수 시 담당자가 연락드리며, 도입에 맞는 효율화 방안을 함께 살펴 드립니다.
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-blue-500 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+            className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm hover:bg-cyan-50 transition-colors"
           >
             문의하기
           </a>
