@@ -2,7 +2,7 @@ import { Building2, ShoppingCart, GraduationCap, TrendingUp, Factory, Truck } fr
 
 export default function UseCasesSection() {
   return (
-    <section id="usecases" className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="usecases" className="section-shell bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-gray-900 tracking-[-0.02em] mb-4">
@@ -13,7 +13,7 @@ export default function UseCasesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 ring-1 ring-slate-200/60">
             <div className="flex items-center space-x-4 mb-6">
               <div className="bg-slate-700 p-3 rounded-xl">

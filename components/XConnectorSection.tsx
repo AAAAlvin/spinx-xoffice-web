@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function XConnectorSection() {
   return (
-    <section id="xconnector" className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="xconnector" className="section-shell bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex flex-col items-center gap-4 mb-6">

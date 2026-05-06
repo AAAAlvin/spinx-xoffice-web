@@ -66,7 +66,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white border-t border-gray-200/60"
+      className="section-shell bg-gradient-to-b from-gray-50 to-white border-t border-gray-200/60"
     >
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">

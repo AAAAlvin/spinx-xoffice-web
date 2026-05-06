@@ -3,7 +3,7 @@ import { Calendar, FileSpreadsheet, FileText, Repeat, Workflow, Zap } from 'luci
 
 export default function XOfficeSection() {
   return (
-    <section id="xoffice" className="scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="xoffice" className="section-shell bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -19,7 +19,7 @@ export default function XOfficeSection() {
           <p className="text-lg text-gray-500 mt-2">Excel을 활용한 손쉬운 데이터 분석과 활용</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
               <div className="bg-green-100 p-3 rounded-xl">

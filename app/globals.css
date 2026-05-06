@@ -70,6 +70,13 @@ a {
   text-decoration: none;
 }
 
+@layer components {
+  /** 랜딩 본문 섹션 공통: 앵커 오프셋 + 세로·가로 패딩 */
+  .section-shell {
+    @apply scroll-mt-16 py-24 sm:py-32 px-4 sm:px-6 lg:px-8;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="top"
-      className="relative min-h-[70vh] scroll-mt-16 pt-32 pb-20 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-100 via-white to-white"
+      className="relative min-h-0 sm:min-h-[70vh] scroll-mt-16 pt-24 pb-16 sm:pt-40 sm:pb-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-100 via-white to-white"
     >
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-sm font-semibold tracking-[-0.01em] text-primary mb-4 sm:text-base">
