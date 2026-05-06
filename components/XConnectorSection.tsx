@@ -43,7 +43,7 @@ export default function XConnectorSection() {
               </div>
               <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
                 <LayoutGrid className="shrink-0" size={20} />
-                <span className="max-sm:text-center sm:text-left">xGrid — 표 데이터 작업과 AI 채팅을 한 화면에서</span>
+                <span className="max-sm:text-center sm:text-left">xBoard — 표 데이터 작업과 AI 채팅을 한 화면에서</span>
               </div>
               <div className="flex items-center justify-center gap-3 max-sm:flex-col max-sm:items-center max-sm:gap-2">
                 <Workflow className="shrink-0" size={20} />
@@ -93,7 +93,7 @@ export default function XConnectorSection() {
             <div className="bg-amber-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
               <LayoutGrid className="text-amber-600" size={32} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">xGrid</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-1">xBoard</h3>
             <p className="text-sm font-semibold text-amber-800 mb-4">데이터 확인과 AI 대화를 한 화면에서</p>
             <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
               넓은 그리드에서 데이터를 조회하고 정리하면서, 같은 화면에서 AI에게 질문할 수 있습니다. 표 작업과 대화를 오가며
