@@ -6,10 +6,10 @@ export default function UseCasesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-gray-900 tracking-[-0.02em] mb-4">
-            사용 사례
+            활용 제안
           </h2>
           <p className="text-xl text-gray-600">
-            다양한 산업에서 활용되는 xOffice{' & '}xConnector
+            다양한 산업에서 활용가능한 xOffice{' & '}xConnector
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function UseCasesSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+          {/* <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
             <div className="flex items-center space-x-4 mb-6">
               <div className="bg-blue-500 p-3 rounded-xl">
                 <Building2 className="text-white" size={28} />
@@ -106,7 +106,7 @@ export default function UseCasesSection() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
             <div className="flex items-center space-x-4 mb-6">

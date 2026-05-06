@@ -26,10 +26,9 @@ export default function XOfficeSection() {
                 <FileSpreadsheet className="text-green-600" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Excel을 통합 업무 효율화</h3>
-                <p className="text-gray-600">
-                  데이터 연동, 가공, 취합, 분석, 리포트 생성까지 모든 Excel 작업을 한 번에 처리하고
-                  효율적으로 마무리하세요.
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Excel을 통한 업무 효율화</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  데이터 연동, 가공, 취합, 분석, 리포트 생성까지 모든 Excel 작업을 한 번에 처리하고 효율적으로 마무리하세요.
                 </p>
               </div>
             </div>

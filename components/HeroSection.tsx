@@ -20,7 +20,7 @@ export default function HeroSection() {
           <br />
           <span className="font-semibold text-primary">xConnector</span>로 AI를 통해 모든 것과 연결하세요.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 sm:mb-14">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
           <a
             href="#contact"
             className="group inline-flex items-center justify-center gap-2 bg-primary text-white px-7 py-3.5 rounded-2xl text-base sm:text-lg font-bold shadow-[0_8px_28px_rgba(49,130,246,0.4)] ring-2 ring-inset ring-white/20 transition hover:scale-[1.02] hover:bg-blue-600 hover:shadow-[0_10px_32px_rgba(49,130,246,0.5)] active:scale-[0.99] sm:px-8 sm:py-4"
@@ -37,7 +37,7 @@ export default function HeroSection() {
           </a>
         </div>
 
-        <div className="mt-6 sm:mt-8 relative">
+        {/* <div className="mt-6 sm:mt-8 relative">
           <div className="max-w-4xl mx-auto rounded-3xl border border-gray-100/80 bg-white/90 p-6 shadow-[0_12px_40px_rgba(25,31,40,0.06)] backdrop-blur sm:p-8">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8">
               <div className="text-center">
@@ -60,7 +60,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

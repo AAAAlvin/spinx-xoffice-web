@@ -55,6 +55,9 @@ body {
     )
     rgb(var(--background-start-rgb));
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* 한글: 음절 단위로 잘리지 않게, 어절·구두점 등 자연스러운 경계에서 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 ::selection {
