@@ -7,14 +7,7 @@ const nav = [
   { href: '#xoffice', label: 'xOffice' },
   { href: '#xconnector', label: 'xConnector' },
   { href: '#usecases', label: '사용 사례' },
-  { href: '#contact', label: '문의' },
 ] as const
-
-const contactCtaClass =
-  'shrink-0 inline-flex items-center justify-center gap-1.5 rounded-2xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-[0_6px_20px_rgba(49,130,246,0.4)] ring-2 ring-primary/30 transition hover:scale-[1.02] hover:bg-blue-600 hover:shadow-[0_8px_28px_rgba(49,130,246,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.98]'
-
-const navLinkClass =
-  'rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100/80 hover:text-gray-900'
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -28,71 +21,44 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ${
         scrolled
-          ? 'border-b border-gray-200/60 bg-white/80 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-white/70'
-          : 'border-b border-transparent bg-gradient-to-b from-white/90 to-white/0'
+          ? 'border-b border-line-soft bg-white/[0.82] shadow-[0_1px_0_rgba(11,26,34,0.04)] backdrop-blur-[12px] [backdrop-filter:blur(12px)_saturate(140%)]'
+          : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <div className="mx-auto flex h-14 w-full max-w-7xl items-center gap-2 px-4 sm:px-6 lg:px-8">
-        <a
-          href="#top"
-          className="relative flex h-8 w-[6.5rem] shrink-0 items-center sm:h-9 sm:w-[7.5rem]"
-        >
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-4 px-6">
+        <a href="#top" className="flex h-[28px] flex-none items-center">
           <Image
             src="/images/xoffice-logo.png"
             alt="xOffice"
-            width={180}
-            height={48}
-            className="h-full w-full object-contain object-left"
+            width={120}
+            height={28}
             priority
+            className="h-[26px] w-auto object-contain"
           />
         </a>
 
-        <a href="#contact" className={`${contactCtaClass} ml-auto md:hidden`}>
-          <span
-            className="inline-block size-1.5 rounded-full bg-white/90"
-            aria-hidden
-          />
-          문의
-        </a>
-
-        <div className="hidden min-w-0 flex-1 md:block">
-          <div className="mx-auto flex max-w-max items-center justify-center">
-            <nav
-              className="flex items-center gap-0.5 sm:gap-1"
-              aria-label="주요 섹션"
-            >
-              {nav.map((item) => {
-                const isContact = item.href === '#contact'
-                if (isContact) {
-                  return (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className={contactCtaClass}
-                    >
-                      <span
-                        className="inline-block size-1.5 rounded-full bg-white/90"
-                        aria-hidden
-                      />
-                      {item.label}
-                    </a>
-                  )
-                }
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className={navLinkClass}
-                  >
-                    {item.label}
-                  </a>
-                )
-              })}
-            </nav>
+        <nav className="ml-auto flex items-center gap-1">
+          <div className="hidden items-center gap-1 md:flex">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="rounded-[10px] px-3.5 py-2 text-[15px] font-medium text-ink-700 transition-colors hover:bg-[#F0F4F4] hover:text-ink-900"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
-        </div>
+          <a
+            href="#contact"
+            className="ml-2 inline-flex items-center gap-[7px] rounded-[11px] bg-brand px-[18px] py-[9px] text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(14,154,167,0.25)] transition-[transform,background,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-dark hover:shadow-[0_12px_34px_rgba(14,154,167,0.42)]"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-white/90" aria-hidden />
+            문의하기
+          </a>
+        </nav>
       </div>
     </header>
   )

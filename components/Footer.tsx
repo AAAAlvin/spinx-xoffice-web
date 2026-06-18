@@ -1,140 +1,76 @@
-import { Mail, Phone } from 'lucide-react'
+const columns = [
+  {
+    title: '서비스',
+    links: ['공지사항', '자주 묻는 질문', '공인인증센터', '계정 일시잠금', '고객보호센터'],
+  },
+  { title: '회사', links: ['회사 소개', '채용', '블로그'] },
+  { title: '문의', links: ['사업 제휴', '인증 사업 문의', '마케팅 · PR', 'IR'] },
+]
+
+const policies = [
+  { label: '서비스 이용약관', strong: false },
+  { label: '통합 금융정보 서비스 약관', strong: false },
+  { label: '이용자의 권리 및 유의사항', strong: false },
+  { label: '개인정보 처리방침', strong: true },
+  { label: '위치기반서비스 이용약관', strong: false },
+]
+
+const linkClass = 'text-ink-600 transition-colors duration-150 hover:text-brand'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Services */}
+    <footer className="border-t border-line bg-surface-muted">
+      <div className="mx-auto max-w-[1200px] px-6 pb-14 pt-16">
+        <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-10">
+          {columns.map((col) => (
+            <div key={col.title}>
+              <h3 className="mb-4 text-[14px] font-bold text-ink-900">{col.title}</h3>
+              <ul className="flex flex-col gap-[11px]">
+                {col.links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className={`text-[14.5px] ${linkClass}`}>
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">서비스</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  공지사항
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  자주 묻는 질문
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  공인인증센터
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  계정 일시잠금
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  고객보호센터
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">회사</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  회사 소개
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  채용
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  블로그
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Inquiries */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">문의</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  사업 제휴
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  인증 사업 문의
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  마케팅 · PR
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-                  IR
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h3 className="font-semibold text-gray-900 mb-4">고객센터</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center text-gray-600">
-                <Phone size={16} className="mr-2" />
-                <span>1599-4905</span>
-              </li>
-              <li className="text-sm text-gray-500">24시간 연중무휴</li>
-              <li className="flex items-center text-gray-600 mt-4">
-                <Mail size={16} className="mr-2" />
-                <span>support@spinx.im</span>
-              </li>
+            <h3 className="mb-4 text-[14px] font-bold text-ink-900">고객센터</h3>
+            <ul className="flex flex-col gap-[9px]">
+              <li className="text-[14.5px] text-ink-600">☎ 1599-4905</li>
+              <li className="text-[13px] text-ink-400">24시간 연중무휴</li>
+              <li className="mt-2 text-[14.5px] text-ink-600">✉ support@spinx.im</li>
             </ul>
           </div>
         </div>
 
-        {/* Company Info */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="text-sm text-gray-600 space-y-2">
-            <p className="font-semibold text-gray-900">㈜SPINX</p>
-            <p className="text-gray-700">xOffice · xConnector</p>
+        <div className="border-t border-line pt-8">
+          <div className="flex flex-col gap-1.5 text-[13px] leading-[1.6] text-ink-500">
+            <p className="text-[14.5px] font-bold text-ink-800">㈜SPINX</p>
+            <p className="text-ink-600">xOffice · xConnector</p>
             <p>사업자 등록번호 : 000-0000-00000 | 대표 : 김혜주</p>
             <p>호스팅 서비스 : 주식회사 SPINX | 통신판매업 신고번호 : 2024-서울강남-03377</p>
             <p>경기도 성남시 분당구 판교역로240 A동 514호</p>
-            <p className="mt-4">고객센터 : 010-3432-5887</p>
+            <p className="mt-2">고객센터 : 010-3432-5887</p>
           </div>
 
-          {/* Terms and Links */}
-          <div className="mt-6 flex flex-wrap gap-4 text-sm">
-            <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-              서비스 이용약관
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-              통합 금융정보 서비스 약관
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-              이용자의 권리 및 유의사항
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors font-semibold">
-              개인정보 처리방침
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-500 transition-colors">
-              위치기반서비스 이용약관
-            </a>
+          <div className="mt-6 flex flex-wrap gap-[18px]">
+            {policies.map((p) => (
+              <a
+                key={p.label}
+                href="#"
+                className={`text-[13px] transition-colors duration-150 hover:text-brand ${
+                  p.strong ? 'font-bold text-ink-800' : 'text-ink-500'
+                }`}
+              >
+                {p.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </footer>
   )
 }
-

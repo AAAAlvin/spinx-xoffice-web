@@ -9,38 +9,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#3182F6',
-        secondary: '#4E5968',
-        background: '#FFFFFF',
-        gray: {
-          50: '#F9FAFB',
-          100: '#F2F4F6',
-          200: '#E5E8EB',
-          300: '#D1D6DB',
-          400: '#B0B8C1',
-          500: '#8B95A1',
-          600: '#6B7684',
-          700: '#4E5968',
-          800: '#333D4B',
-          900: '#191F28',
+        // 2026 디자인 — teal 액센트
+        brand: {
+          DEFAULT: '#0E9AA7',
+          dark: '#0B7E89',
+          bright: '#16C2CE',
+          tint: '#ECF6F6',
         },
-        blue: {
-          50: '#E8F3FF',
-          100: '#C9E2FF',
-          500: '#3182F6',
-          600: '#1B64DA',
-          700: '#1957C2',
+        primary: '#0E9AA7',
+        // ink — 본문/제목 계열
+        ink: {
+          900: '#0B1A22',
+          800: '#16323B',
+          700: '#3D4F54',
+          600: '#5B6B70',
+          500: '#7C8A8E',
+          400: '#94A2A6',
+        },
+        line: {
+          DEFAULT: '#E7ECEC',
+          soft: '#EEF2F2',
+          faint: '#F0F3F3',
+          field: '#E0E6E6',
+        },
+        surface: {
+          DEFAULT: '#FBFCFC',
+          muted: '#F6F8F8',
         },
       },
       fontFamily: {
         sans: [
+          'Pretendard',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
-          'Pretendard',
           'Segoe UI',
           'Roboto',
-          'Noto Sans KR',
           'sans-serif',
         ],
       },
@@ -49,4 +53,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-

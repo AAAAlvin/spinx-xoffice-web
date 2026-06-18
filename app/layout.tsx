@@ -1,18 +1,27 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
 import SiteHeader from '@/components/SiteHeader'
+// 문의 섹션 아래 영역 임시 숨김
+// import Footer from '@/components/Footer'
 
-const noto = Noto_Sans_KR({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-})
+const title = 'xOffice & xConnector — Excel 업무 효율화와 AI 연결'
+const description =
+  'xOffice로 Excel 파일을 시스템에 연결하고, xConnector로 AI와 업무를 효율적으로 연결하세요.'
 
 export const metadata: Metadata = {
-  title: 'xOffice & xConnector — Excel 업무 효율화와 AI 연결',
-  description:
-    'xOffice로 Excel 파일을 시스템에 연결하고, xConnector로 AI와 업무를 효율적으로 연결하세요.',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: 'website',
+    locale: 'ko_KR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
 }
 
 export default function RootLayout({
@@ -22,11 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${noto.className} text-gray-900 antialiased`}>
+      <body className="font-sans text-ink-900 antialiased">
         <SiteHeader />
         {children}
+        {/* 문의 섹션 아래 영역 임시 숨김 */}
+        {/* <Footer /> */}
       </body>
     </html>
   )
 }
-

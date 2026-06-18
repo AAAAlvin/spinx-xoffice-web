@@ -1,9 +1,12 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { AlertCircle, CheckCircle2, Mail, Send } from 'lucide-react'
+import ScrollReveal from '@/components/ScrollReveal'
 
 type Feedback = { kind: 'success' } | { kind: 'error'; message: string }
+
+const fieldClass =
+  'w-full rounded-[14px] border border-line-field bg-white px-4 py-[13px] text-[15px] text-ink-900 outline-none transition-[border-color,box-shadow] duration-200 focus:border-brand focus:shadow-[0_0_0_3px_rgba(14,154,167,0.14)]'
 
 export default function ContactSection() {
   const [sending, setSending] = useState(false)
@@ -66,150 +69,106 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="section-shell bg-gradient-to-b from-gray-50 to-white border-t border-gray-200/60"
+      className="scroll-mt-16 border-t border-[#EAEFEF] bg-surface-muted px-6 py-[104px]"
     >
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-balance text-gray-900 tracking-[-0.02em] mb-2">
+      <div className="mx-auto max-w-[660px]">
+        <ScrollReveal className="mb-10 text-center">
+          <p className="mb-3 text-[0.82rem] font-bold uppercase tracking-[0.12em] text-brand">
+            Contact us
+          </p>
+          <h2 className="mb-3 text-[clamp(2rem,3.6vw,2.6rem)] font-extrabold tracking-[-0.025em] text-ink-900">
             문의하기
           </h2>
-          <p className="text-sm font-medium tracking-wide text-primary uppercase">Contact us</p>
-          <p className="text-lg text-gray-600 mt-4">
-            문의 접수 시 담당자가 연락드립니다.
-          </p>
-        </div>
+          <p className="text-[1.08rem] text-ink-600">문의 접수 시 담당자가 연락드립니다.</p>
+        </ScrollReveal>
 
-        {feedback?.kind === 'success' && (
-          <div
-            className="mb-8 overflow-hidden rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/95 to-white shadow-[0_8px_30px_rgba(16,185,129,0.12)]"
-            role="status"
-            aria-live="polite"
-          >
-            <div className="flex items-start gap-4 p-5 sm:p-6">
-              <div
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600"
-                aria-hidden
-              >
-                <CheckCircle2 className="h-6 w-6" strokeWidth={2} />
+        <ScrollReveal className="rounded-[26px] border border-line bg-white p-9 shadow-[0_24px_60px_-36px_rgba(11,26,34,.22)]">
+          {feedback?.kind === 'success' ? (
+            <div className="px-2 py-7 text-center" role="status" aria-live="polite">
+              <div className="mx-auto mb-[18px] flex h-[60px] w-[60px] items-center justify-center rounded-[18px] bg-brand-tint">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA7" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
               </div>
-              <div className="min-w-0 space-y-1 pt-0.5">
-                <p className="text-base font-bold text-gray-900 sm:text-lg">접수되었어요</p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  빠른 시일 안에 남겨주신 주소로 답변 드릴게요. 스팸 메일함도 한 번
-                  봐주시면 좋아요.
-                </p>
-              </div>
+              <h3 className="mb-2 text-[1.3rem] font-extrabold text-ink-900">접수되었어요</h3>
+              <p className="text-[0.97rem] leading-[1.6] text-ink-600">
+                빠른 시일 안에 남겨주신 주소로 답변 드릴게요.
+                <br />
+                스팸 메일함도 한 번 봐주시면 좋아요.
+              </p>
             </div>
-          </div>
-        )}
-
-        {feedback?.kind === 'error' && (
-          <div
-            className="mb-8 overflow-hidden rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/95 to-white shadow-[0_8px_30px_rgba(245,158,11,0.1)]"
-            role="alert"
-            aria-live="assertive"
-          >
-            <div className="flex items-start gap-4 p-5 sm:p-6">
-              <div
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-700"
-                aria-hidden
-              >
-                <AlertCircle className="h-6 w-6" strokeWidth={2} />
-              </div>
-              <div className="min-w-0 space-y-2 pt-0.5">
-                <p className="text-base font-bold text-gray-900 sm:text-lg">잠시 문제가 있었어요</p>
-                <p className="text-sm leading-relaxed text-gray-700">{feedback.message}</p>
-                <p className="text-xs text-gray-500">입력 내용은 그대로 있으니, 잠시 후 다시 눌러 주세요.</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white rounded-3xl border border-gray-200/80 shadow-[0_12px_40px_rgba(25,31,40,0.06)] p-6 sm:p-10 space-y-6"
-        >
-          <input
-            type="text"
-            name="_honey"
-            className="sr-only"
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden
-          />
-
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-2">
-              이름 <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              className="w-full rounded-2xl border border-gray-200 px-4 py-3 text-gray-900 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-              placeholder="홍길동"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-2">
-              이메일 <span className="text-red-500">*</span>
-            </label>
-            <div className="relative">
-              <Mail
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                size={20}
-                aria-hidden
-              />
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="w-full rounded-2xl border border-gray-200 pl-11 pr-4 py-3 text-gray-900 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-                placeholder="name@company.com"
+                type="text"
+                name="_honey"
+                className="sr-only"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
               />
-            </div>
-          </div>
 
-          <div>
-            <label htmlFor="company" className="block text-sm font-semibold text-gray-800 mb-2">
-              회사 / 소속 <span className="text-gray-400 font-normal">(선택)</span>
-            </label>
-            <input
-              id="company"
-              name="company"
-              type="text"
-              className="w-full rounded-2xl border border-gray-200 px-4 py-3 text-gray-900 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-            />
-          </div>
+              {feedback?.kind === 'error' && (
+                <div
+                  className="rounded-[14px] border border-[#F3D9A8] bg-[#FBF1E3] px-4 py-3.5 text-[0.9rem] font-medium text-[#B26A1F]"
+                  role="alert"
+                  aria-live="assertive"
+                >
+                  {feedback.message}
+                </div>
+              )}
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-gray-800 mb-2">
-              문의 내용 <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              className="w-full rounded-2xl border border-gray-200 px-4 py-3 text-gray-900 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition resize-y min-h-[120px]"
-              placeholder="도입 시기, 희망 기능, 문의 사항을 남겨주세요."
-            />
-          </div>
+              <div>
+                <label htmlFor="name" className="mb-2 block text-[0.88rem] font-semibold text-ink-800">
+                  이름 <span className="text-[#E2575A]">*</span>
+                </label>
+                <input id="name" name="name" type="text" required placeholder="홍길동" className={fieldClass} />
+              </div>
 
-          <div className="flex justify-center pt-1">
-            <button
-              type="submit"
-              disabled={sending}
-              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-2xl bg-primary px-8 py-4 text-base font-bold text-white shadow-[0_8px_28px_rgba(49,130,246,0.35)] ring-2 ring-inset ring-white/20 transition hover:scale-[1.01] hover:bg-blue-600 active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
-            >
-              <Send size={20} />
-              {sending ? '보내는 중…' : '문의 보내기'}
-            </button>
-          </div>
-        </form>
+              <div>
+                <label htmlFor="email" className="mb-2 block text-[0.88rem] font-semibold text-ink-800">
+                  이메일 <span className="text-[#E2575A]">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="name@company.com"
+                  className={fieldClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="company" className="mb-2 block text-[0.88rem] font-semibold text-ink-800">
+                  회사 / 소속 <span className="font-normal text-ink-400">(선택)</span>
+                </label>
+                <input id="company" name="company" type="text" className={fieldClass} />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="mb-2 block text-[0.88rem] font-semibold text-ink-800">
+                  문의 내용 <span className="text-[#E2575A]">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="도입 시기, 희망 기능, 문의 사항을 남겨주세요."
+                  className={`${fieldClass} min-h-[120px] resize-y leading-[1.6]`}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={sending}
+                className="inline-flex w-full items-center justify-center gap-[9px] rounded-[14px] bg-brand p-4 text-[16px] font-bold text-white shadow-[0_10px_28px_rgba(14,154,167,.3)] transition-[transform,background,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-dark hover:shadow-[0_12px_34px_rgba(14,154,167,.42)] disabled:pointer-events-none disabled:opacity-60"
+              >
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4z" /><path d="M22 2 11 13" /></svg>
+                {sending ? '보내는 중…' : '문의 보내기'}
+              </button>
+            </form>
+          )}
+        </ScrollReveal>
       </div>
     </section>
   )
