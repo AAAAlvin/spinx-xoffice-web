@@ -82,7 +82,7 @@ export default function ContactSection() {
           <p className="text-[1.08rem] text-ink-600">문의 접수 시 담당자가 연락드립니다.</p>
         </ScrollReveal>
 
-        <ScrollReveal className="rounded-[26px] border border-line bg-white p-9 shadow-[0_24px_60px_-36px_rgba(11,26,34,.22)]">
+        <ScrollReveal className="rounded-[26px] border border-line bg-white p-9 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
           {feedback?.kind === 'success' ? (
             <div className="px-2 py-7 text-center" role="status" aria-live="polite">
               <div className="mx-auto mb-[18px] flex h-[60px] w-[60px] items-center justify-center rounded-[18px] bg-brand-tint">

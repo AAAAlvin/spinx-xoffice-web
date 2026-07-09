@@ -1,4 +1,5 @@
 import ScrollReveal from '@/components/ScrollReveal'
+import WordReveal from '@/components/WordReveal'
 
 export default function HeroSection() {
   return (
@@ -15,42 +16,52 @@ export default function HeroSection() {
         }}
       />
 
-      <ScrollReveal asHero className="relative mx-auto max-w-[960px] text-center">
-        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-[7px] shadow-[0_1px_2px_rgba(11,26,34,.03)]">
-          <span className="h-[7px] w-[7px] rounded-full bg-brand" />
-          <span className="whitespace-nowrap text-[13.5px] font-semibold tracking-[-0.01em] text-ink-800">
-            Excel은 그대로, 업무의 가치는 무한하게
-          </span>
-        </div>
-        <h1 className="mb-6 text-[clamp(2.4rem,5.2vw,4.4rem)] font-extrabold leading-[1.12] tracking-[-0.035em] text-ink-900">
-          사용하던 Excel File 그대로,
-          <br />
-          <span className="text-brand">System과 AI를 결합하세요</span>
-        </h1>
-        <p className="mx-auto mb-10 max-w-[620px] text-[clamp(1.05rem,1.6vw,1.3rem)] leading-[1.6] text-ink-600">
-          <strong className="font-bold text-ink-800">xOffice</strong>로 Excel File을 System에 연결하고
-          <br />
-          <strong className="font-bold text-ink-800">xConnector</strong>로 AI를 통해 모든 것과 연결하세요.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-[9px] rounded-[14px] bg-brand px-[30px] py-[15px] text-[17px] font-bold text-white shadow-[0_10px_30px_rgba(14,154,167,.32)] transition-[transform,background,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-dark hover:shadow-[0_12px_34px_rgba(14,154,167,.42)]"
-          >
-            문의하기
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </a>
-          <a
-            href="#xoffice"
-            className="inline-flex items-center gap-2 rounded-[14px] border border-line-field bg-white px-[26px] py-[15px] text-[17px] font-semibold text-ink-800 transition-colors duration-200 hover:border-[#CFD8D8] hover:bg-[#F4F7F7]"
-          >
-            제품 살펴보기
-          </a>
-        </div>
-      </ScrollReveal>
+      <div className="relative z-10 mx-auto max-w-[960px] text-center">
+        <ScrollReveal asHero>
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-[7px] shadow-[0_1px_2px_rgba(11,26,34,.03)]">
+            <span className="h-[7px] w-[7px] rounded-full bg-brand" />
+            <span className="whitespace-nowrap text-[13.5px] font-semibold tracking-[-0.01em] text-ink-800">
+              Excel은 그대로, 업무의 가치는 무한하게
+            </span>
+          </div>
+        </ScrollReveal>
+        <WordReveal
+          immediate
+          className="mb-6 text-[clamp(2.4rem,5.2vw,4.4rem)] font-extrabold leading-[1.12] tracking-[-0.035em] text-ink-900"
+          segments={[
+            { text: '사용하던 Excel File 그대로,' },
+            { br: true },
+            { text: 'System과 AI를 결합하세요', className: 'text-brand' },
+          ]}
+        />
+        <ScrollReveal delay={0.5}>
+          <p className="mx-auto mb-10 max-w-[620px] text-[clamp(1.05rem,1.6vw,1.3rem)] leading-[1.6] text-ink-600">
+            <strong className="font-bold text-ink-800">xOffice</strong>로 Excel File을 System에 연결하고
+            <br />
+            <strong className="font-bold text-ink-800">xConnector</strong>로 AI를 통해 모든 것과 연결하세요.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.62}>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-[9px] rounded-[14px] bg-brand px-[30px] py-[15px] text-[17px] font-bold text-white shadow-[0_10px_30px_rgba(14,154,167,.32)] transition-[transform,background,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-dark hover:shadow-[0_12px_34px_rgba(14,154,167,.42)]"
+            >
+              문의하기
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+            </a>
+            <a
+              href="#xoffice"
+              className="inline-flex items-center gap-2 rounded-[14px] border border-line-field bg-white px-[26px] py-[15px] text-[17px] font-semibold text-ink-800 transition-colors duration-200 hover:border-[#CFD8D8] hover:bg-[#F4F7F7]"
+            >
+              제품 살펴보기
+            </a>
+          </div>
+        </ScrollReveal>
+      </div>
 
       <ScrollReveal className="relative mx-auto mt-[72px] max-w-[1040px]">
-        <div className="overflow-hidden rounded-[20px] border border-line bg-white shadow-[0_30px_70px_-30px_rgba(11,26,34,.28),0_8px_24px_-12px_rgba(11,26,34,.10)]">
+        <div className="overflow-hidden rounded-[20px] border border-line bg-white shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]">
           <div className="flex items-center gap-[7px] border-b border-line-soft bg-surface px-[18px] py-[14px]">
             <span className="h-[11px] w-[11px] rounded-full bg-[#E2575A]" />
             <span className="h-[11px] w-[11px] rounded-full bg-[#EBB740]" />

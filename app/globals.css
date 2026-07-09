@@ -62,6 +62,19 @@ a {
   }
 }
 
+/* MengTo/Skills — marquee-loop: 이음새 없는 무한 루프 (0 → -50%) */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

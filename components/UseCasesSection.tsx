@@ -75,7 +75,7 @@ export default function UseCasesSection() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-6">
           {useCases.map((u, i) => (
             <ScrollReveal key={u.title} delay={i * 0.07} className="h-full">
-              <div className="flex h-full flex-col rounded-[24px] border border-line bg-white p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[#CFE5E6] hover:shadow-[0_22px_50px_-28px_rgba(11,26,34,.28)]">
+              <div className="flex h-full flex-col rounded-[24px] border border-line bg-white p-8 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[#CFE5E6] hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
                 <div className="mb-[22px] flex items-center gap-3.5">
                   <div className="flex h-[50px] w-[50px] items-center justify-center rounded-[14px] bg-ink-900">
                     {u.icon}

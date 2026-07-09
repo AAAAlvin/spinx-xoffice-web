@@ -78,7 +78,7 @@ export default function XOfficeSection() {
             ))}
           </div>
 
-          <ScrollReveal className="rounded-[24px] border border-line bg-surface p-7 shadow-[0_24px_60px_-34px_rgba(11,26,34,.22)]">
+          <ScrollReveal className="rounded-[24px] border border-line bg-surface p-7 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
             <div className="mb-4 rounded-[18px] border border-line-soft bg-white p-6">
               <div className="mb-3.5 flex items-center justify-between">
                 <span className="text-[0.95rem] font-semibold text-ink-600">이번 달 처리한 작업</span>

@@ -90,7 +90,10 @@ export default function XConnectorSection() {
         <div className="mb-8 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5">
           {cards.map((c, i) => (
             <ScrollReveal key={c.name} delay={i * 0.07} className="h-full">
-              <div className="flex h-full flex-col rounded-[22px] border border-line bg-white p-[30px] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[#CFE5E6] hover:shadow-[0_22px_50px_-28px_rgba(11,26,34,.28)]">
+              <div className="flex h-full flex-col rounded-[22px] border border-line bg-white p-[30px] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-[#CFE5E6] hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                <span className="mb-4 block font-mono text-[0.72rem] font-bold tracking-[0.2em] text-ink-400">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
                 <div className="mb-3.5 flex items-center justify-between">
                   <h3 className="text-[1.4rem] font-extrabold tracking-[-0.02em] text-ink-900">
                     {c.name}
